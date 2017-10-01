@@ -1,0 +1,15 @@
+- name: Ensure postfix is installed
+  apt:
+    name: postfix
+    state: installed
+
+- name: Ensure postfix is started and enabled at boot
+  service:
+    name: postfix
+    state: started
+    enabled: yes
+
+- name: Add generit map
+  lineinfile:
+    path: /etc/postfix/main.cf
+    line: 'smtp_generic_maps = hash:/etc/postfix/generic'

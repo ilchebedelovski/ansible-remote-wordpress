@@ -1,0 +1,23 @@
+---
+- name: Install Apache
+  apt:
+    name: apache2
+    update_cache: yes
+    state: latest
+
+- name: Enable Apache rewrites
+  apache2_module: 
+    name: rewrite
+    state: present
+
+- name: Start Apache
+  service:
+    name: apache2
+    state: running
+    enabled: yes
+
+- name: Install Hello World PHP script
+  copy:
+    src: index.php
+    dest: /var/www/index.php
+    mode: 0664

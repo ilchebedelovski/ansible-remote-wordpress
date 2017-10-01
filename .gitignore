@@ -1,0 +1,3 @@
+*.retry
+inventories/hosts
+group_vars/all.yml

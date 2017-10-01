@@ -1,0 +1,6 @@
+# MySQL credentials
+wordpress_username: "wordpress"
+wordpress_password: "wordpress_env"
+wordpress_database: "wordpress"
+
+

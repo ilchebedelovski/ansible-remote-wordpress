@@ -1,0 +1,10 @@
+# Deploying roles for Apache Webserver, PHP, Postfix mail sender, MySQL Database Server and the newest Wordpress
+- hosts: wordpress
+  become: yes
+  become_user: root
+  roles:
+  - webserver
+  - php
+  - postfix
+  - database
+  - wordpress
